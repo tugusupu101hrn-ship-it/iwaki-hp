@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Film K | 企業の価値を映し出す</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Shippori+Mincho:wght@400;600;800&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              wood: {
+                50: '#fbf7f4',
+                100: '#f5efe8',
+                200: '#ece0d3',
+                300: '#dec6b3',
+                400: '#cda68b',
+                500: '#bd8969',
+                600: '#af7456',
+                700: '#925d45',
+                800: '#7a4e3d',
+                900: '#634034',
+                950: '#35211a',
+              },
+              nature: {
+                green: '#5c6b54',
+                darkGreen: '#3a4535',
+              }
+            },
+            fontFamily: {
+              sans: ['"Noto Sans JP"', 'sans-serif'],
+              serif: ['"Shippori Mincho"', 'serif'],
+            },
+            backgroundImage: {
+              'wood-texture': "url('https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?q=80&w=2069&auto=format&fit=crop')",
+              'grain-overlay': "url('https://www.transparenttextures.com/patterns/wood-pattern.png')",
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body {
+        background-color: #fbf7f4;
+        color: #634034;
+      }
+      .wood-text {
+        background: url('https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&q=80&w=1000') center/cover;
+        -webkit-background-clip: text;
+        color: transparent;
+      }
+      /* Custom Scrollbar */
+      ::-webkit-scrollbar {
+        width: 10px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #f5efe8;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #af7456;
+        border-radius: 5px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #925d45;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.4",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "framer-motion": "https://esm.sh/framer-motion@^12.34.0",
+    "lucide-react": "https://esm.sh/lucide-react@^0.563.0",
+    "@google/genai": "https://esm.sh/@google/genai@^1.40.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
