@@ -3,56 +3,56 @@ import { WorkItem } from '../types';
 export const works: WorkItem[] = [
     {
         id: '1',
-        title: 'Natura Life Co.',
+        title: 'Tokyo Keibi Co., Ltd.',
         category: 'Brand Movie',
         imageUrl: 'https://images.unsplash.com/photo-1497215728101-856f4ea42174?q=80&w=2070&auto=format&fit=crop',
         videoUrl: '/videos/brand-movie.mp4',
-        youtubeId: 'dQw4w9WgXcQ',
-        description: '自然と調和するライフスタイルを提案するブランドムービー。'
+        youtubeId: 'rL8684M7jr0',
+        description: '東京の日常を守る会社の社員の遍歴を見せたブランドムービー。'
     },
     {
         id: '2',
-        title: 'Cafe Mokume',
-        category: 'Web CM',
+        title: 'Hirono Iron Works Co., Ltd.',
+        category: 'Company newsletter',
         imageUrl: 'https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=2047&auto=format&fit=crop',
         videoUrl: '/videos/web-cm.mp4',
-        youtubeId: 'dQw4w9WgXcQ',
-        description: '古民家カフェの温もりとこだわりを伝えるWebCM。'
+        youtubeId: 'cAY9KSCXSjk',
+        description: '会社設立80周年を記念し、100年に向けたメッセージ動画。'
     },
     {
         id: '3',
-        title: 'Tech Artisan',
+        title: 'Tokyo Keibi Co., Ltd',
         category: 'Recruit',
         imageUrl: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2070&auto=format&fit=crop',
         videoUrl: '/videos/recruit.mp4',
-        youtubeId: 'dQw4w9WgXcQ',
-        description: '技術者の情熱と誇りを描く採用ムービー。'
+        youtubeId: 'N7nQqLsHpjQ',
+        description: '新規立ち上げ会社の採用募集ムービー。'
     },
     {
         id: '4',
-        title: 'Craftsmen Union',
+        title: 'Sagamihara City',
         category: 'Documentary',
         imageUrl: 'https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=2070&auto=format&fit=crop',
         videoUrl: '/videos/documentary.mp4',
-        youtubeId: 'dQw4w9WgXcQ',
-        description: '伝統工芸を守る職人たちのドキュメンタリー映像。'
+        youtubeId: 'jKyL9h6r9jU',
+        description: '相模原市の魅力を伝えるPR動画。'
     },
     {
         id: '5',
-        title: 'Forest Stay',
+        title: 'OASIS RAGOON',
         category: 'Promotion',
         imageUrl: 'https://images.unsplash.com/photo-1445964047600-cdbdb873673d?q=80&w=1984&auto=format&fit=crop',
         videoUrl: '/videos/promotion.mp4',
-        youtubeId: 'dQw4w9WgXcQ',
-        description: '森の中の隠れ家リゾートのプロモーション映像。'
+        youtubeId: '9xeXpneKdhY',
+        description: '神奈川にある美容整形のプロモーション映像。'
     },
     {
         id: '6',
-        title: 'Organic Farm',
+        title: 'Sagamihara City',
         category: 'Product',
         imageUrl: 'https://images.unsplash.com/photo-1625246333195-09d966332410?q=80&w=1979&auto=format&fit=crop',
         videoUrl: '/videos/product.mp4',
-        youtubeId: 'dQw4w9WgXcQ',
-        description: '新鮮なオーガニック野菜の魅力を伝える製品紹介映像。'
+        youtubeId: 'jKyL9h6r9jU',
+        description: '相模原市の魅力を伝えるPR動画。'
     },
 ];
