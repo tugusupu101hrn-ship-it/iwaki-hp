@@ -2,7 +2,16 @@ import { GoogleGenAI, Type } from "@google/genai";
 import { PlannerFormData, StrategyResponse } from "../types";
 
 const apiKey = process.env.API_KEY || '';
-const ai = new GoogleGenAI({ apiKey });
+
+// Initialize lazily to avoid crash if API key is missing at startup
+let ai: GoogleGenAI | null = null;
+
+const getAiClient = () => {
+  if (!ai) {
+    ai = new GoogleGenAI({ apiKey });
+  }
+  return ai;
+}
 
 export const generateVideoStrategy = async (data: PlannerFormData): Promise<StrategyResponse> => {
   if (!apiKey) {
@@ -21,6 +30,9 @@ export const generateVideoStrategy = async (data: PlannerFormData): Promise<Stra
     };
   }
 
+  // Use the getter
+  const client = getAiClient();
+
   const prompt = `
     あなたはプロの映像制作プロデューサーです。以下の企業情報に基づいて、
     企業の価値を最大限に引き出すための映像制作企画を提案してください。
@@ -34,8 +46,8 @@ export const generateVideoStrategy = async (data: PlannerFormData): Promise<Stra
   `;
 
   try {
-    const response = await ai.models.generateContent({
-      model: "gemini-3-flash-preview",
+    const response = await client.models.generateContent({
+      model: "gemini-2.0-flash",
       contents: prompt,
       config: {
         responseMimeType: "application/json",
@@ -44,10 +56,10 @@ export const generateVideoStrategy = async (data: PlannerFormData): Promise<Stra
           properties: {
             concept: { type: Type.STRING, description: "Main video concept" },
             tone: { type: Type.STRING, description: "Tone of the video (e.g., Emotional, Professional)" },
-            storyline: { 
-              type: Type.ARRAY, 
+            storyline: {
+              type: Type.ARRAY,
               items: { type: Type.STRING },
-              description: "3-5 bullet points outlining the video structure" 
+              description: "3-5 bullet points outlining the video structure"
             },
             recommendedStyle: { type: Type.STRING, description: "Visual style recommendation" }
           },
