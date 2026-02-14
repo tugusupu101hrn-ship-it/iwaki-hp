@@ -13,13 +13,30 @@ export const About: React.FC = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <div className="relative">
-              <div className="absolute top-4 left-4 w-full h-full border-2 border-wood-300 rounded-sm z-0"></div>
-              <img
-                src="/images/philosophy.jpg"
-                alt="Filming process"
-                className="relative z-10 w-full rounded-sm shadow-xl grayscale hover:grayscale-0 transition-all duration-700"
-              />
+            <div className="grid grid-cols-2 gap-4 relative">
+              <div className="absolute -top-4 -left-4 w-full h-full border-2 border-wood-300 rounded-sm z-0"></div>
+
+              <div className="col-span-2 relative z-10">
+                <img
+                  src="/images/philosophy1.jpg"
+                  alt="Filming process main"
+                  className="w-full h-auto rounded-sm shadow-lg grayscale hover:grayscale-0 transition-all duration-700"
+                />
+              </div>
+              <div className="col-span-1 relative z-10">
+                <img
+                  src="/images/philosophy2.jpg"
+                  alt="Filming process 2"
+                  className="w-full h-full object-cover rounded-sm shadow-lg grayscale hover:grayscale-0 transition-all duration-700"
+                />
+              </div>
+              <div className="col-span-1 relative z-10">
+                <img
+                  src="/images/philosophy3.jpg"
+                  alt="Filming process 3"
+                  className="w-full h-full object-cover rounded-sm shadow-lg grayscale hover:grayscale-0 transition-all duration-700"
+                />
+              </div>
             </div>
           </motion.div>
 
