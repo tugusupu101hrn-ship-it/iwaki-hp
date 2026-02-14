@@ -1,10 +1,42 @@
 import React from 'react';
 import { Button } from './ui/Button';
-
 import { useForm, ValidationError } from '@formspree/react';
+import { AiPlanContext } from '../types';
+import { Sparkles } from 'lucide-react';
 
-export const Contact: React.FC = () => {
+interface ContactProps {
+  aiPlanData?: AiPlanContext | null;
+}
+
+export const Contact: React.FC<ContactProps> = ({ aiPlanData }) => {
   const [state, handleSubmit] = useForm("mwvnopre");
+
+  const formatAiPlan = (data: AiPlanContext) => {
+    return `
+【AI企画書】
+企業名: ${data.formData.companyName}
+業種: ${data.formData.industry}
+Core Value: ${data.formData.coreValue}
+ターゲット: ${data.formData.targetAudience}
+
+■コンセプト
+${data.strategy.concept}
+
+■トーン
+${data.strategy.tone}
+
+■推奨スタイル
+${data.strategy.recommendedStyle}
+
+■ストーリーライン
+${data.strategy.storyline.map((line, i) => `${i + 1}. ${line}`).join('\n')}
+    `.trim();
+  };
+
+  const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    await handleSubmit(e);
+  };
 
   if (state.succeeded) {
     return (
@@ -38,7 +70,26 @@ export const Contact: React.FC = () => {
             </p>
           </div>
 
-          <form onSubmit={handleSubmit} className="space-y-6">
+          <form onSubmit={handleFormSubmit} className="space-y-6">
+            {aiPlanData && (
+              <div className="bg-wood-50 border border-wood-200 p-6 rounded-xl mb-8 text-left">
+                <div className="flex items-center gap-2 mb-3 text-wood-800 font-bold">
+                  <Sparkles size={18} className="text-wood-600" />
+                  <span>以下のAI企画内容を含めて送信します</span>
+                </div>
+                <div className="text-sm text-wood-600 space-y-1">
+                  <p><span className="font-semibold">コンセプト:</span> {aiPlanData.strategy.concept}</p>
+                  <p><span className="font-semibold">トーン:</span> {aiPlanData.strategy.tone}</p>
+                </div>
+                <textarea
+                  name="ai_plan"
+                  value={formatAiPlan(aiPlanData)}
+                  hidden
+                  readOnly
+                />
+              </div>
+            )}
+
             <div className="grid md:grid-cols-2 gap-6">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-wood-800 mb-2">お名前 <span className="text-red-500">*</span></label>
@@ -58,6 +109,7 @@ export const Contact: React.FC = () => {
                   id="company"
                   type="text"
                   name="company"
+                  defaultValue={aiPlanData?.formData.companyName || ''}
                   className="w-full px-4 py-3 bg-wood-50 border-b-2 border-wood-200 focus:border-wood-600 outline-none transition-colors"
                   placeholder="株式会社Film K"
                 />

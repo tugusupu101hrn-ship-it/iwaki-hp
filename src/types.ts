@@ -30,3 +30,7 @@ export interface PlannerFormData {
   coreValue: string;
   targetAudience: string;
 }
+export interface AiPlanContext {
+  formData: PlannerFormData;
+  strategy: StrategyResponse;
+}

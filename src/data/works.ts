@@ -26,7 +26,7 @@ export const works: WorkItem[] = [
         imageUrl: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2070&auto=format&fit=crop',
         videoUrl: '/videos/recruit.mp4',
         youtubeId: 'N7nQqLsHpjQ',
-        description: '新規立ち上げ会社の採用募集ムービー。'
+        description: '新規立ち上げに伴う採用募集ムービー。'
     },
     {
         id: '4',
