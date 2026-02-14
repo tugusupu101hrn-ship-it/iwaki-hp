@@ -1,3 +1,5 @@
+import React from 'react';
+
 export interface ServiceItem {
   id: string;
   title: string;
@@ -10,6 +12,8 @@ export interface WorkItem {
   title: string;
   category: string;
   imageUrl: string;
+  videoUrl?: string;
+  description?: string;
 }
 
 export interface StrategyResponse {
