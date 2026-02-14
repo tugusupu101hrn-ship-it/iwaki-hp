@@ -31,10 +31,10 @@ export const works: WorkItem[] = [
     {
         id: '4',
         title: 'Sagamihara City',
-        category: 'Documentary',
+        category: 'Event Report',
         imageUrl: 'https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=2070&auto=format&fit=crop',
-        videoUrl: '/videos/documentary.mp4',
-        youtubeId: 'jKyL9h6r9jU',
+        videoUrl: '/videos/Event Report.mp4',
+        youtubeId: 'c0nR7h84',
         description: '相模原市の魅力を伝えるPR動画。'
     },
     {
@@ -48,11 +48,11 @@ export const works: WorkItem[] = [
     },
     {
         id: '6',
-        title: 'Sagamihara City',
-        category: 'Product',
+        title: 'dld',
+        category: 'Instore Promotion',
         imageUrl: 'https://images.unsplash.com/photo-1625246333195-09d966332410?q=80&w=1979&auto=format&fit=crop',
         videoUrl: '/videos/product.mp4',
-        youtubeId: 'jKyL9h6r9jU',
-        description: '相模原市の魅力を伝えるPR動画。'
+        youtubeId: 'nIbHT1mgP0o',
+        description: 'dld那須塩原店のインストアプロモーションムービー。'
     },
 ];
