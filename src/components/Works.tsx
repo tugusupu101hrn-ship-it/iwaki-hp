@@ -2,16 +2,8 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { WorkItem } from '../types';
 
-const works: WorkItem[] = [
-  { id: '1', title: 'Natura Life Co.', category: 'Brand Movie', imageUrl: 'https://images.unsplash.com/photo-1497215728101-856f4ea42174?q=80&w=2070&auto=format&fit=crop' },
-  { id: '2', title: 'Cafe Mokume', category: 'Web CM', imageUrl: 'https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=2047&auto=format&fit=crop' },
-  { id: '3', title: 'Tech Artisan', category: 'Recruit', imageUrl: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2070&auto=format&fit=crop' },
-  { id: '4', title: 'Craftsmen Union', category: 'Documentary', imageUrl: 'https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=2070&auto=format&fit=crop' },
-  { id: '5', title: 'Forest Stay', category: 'Promotion', imageUrl: 'https://images.unsplash.com/photo-1445964047600-cdbdb873673d?q=80&w=1984&auto=format&fit=crop' },
-  { id: '6', title: 'Organic Farm', category: 'Product', imageUrl: 'https://images.unsplash.com/photo-1625246333195-09d966332410?q=80&w=1979&auto=format&fit=crop' },
-];
-
 import { Link } from 'react-router-dom';
+import { works } from '../data/works';
 
 export const Works: React.FC = () => {
   return (
@@ -38,13 +30,12 @@ export const Works: React.FC = () => {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
                 <img
-                  src={work.imageUrl}
+                  src={work.youtubeId ? `https://img.youtube.com/vi/${work.youtubeId}/maxresdefault.jpg` : work.imageUrl}
                   alt={work.title}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-wood-900/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center text-white">
-                  <span className="text-xs tracking-widest uppercase mb-2 text-wood-300">{work.category}</span>
-                  <h3 className="text-xl font-serif font-bold">{work.title}</h3>
+                <div className="absolute inset-0 bg-wood-900/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center text-white p-4 text-center">
+                  <h3 className="text-xl md:text-2xl font-serif font-bold leading-relaxed">{work.title}</h3>
                 </div>
               </motion.div>
             </Link>

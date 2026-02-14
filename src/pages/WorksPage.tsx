@@ -22,13 +22,12 @@ export const WorksPage: React.FC = () => {
                                 transition={{ duration: 0.5, delay: index * 0.1 }}
                             >
                                 <img
-                                    src={work.imageUrl}
+                                    src={work.youtubeId ? `https://img.youtube.com/vi/${work.youtubeId}/maxresdefault.jpg` : work.imageUrl}
                                     alt={work.title}
                                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                                 />
-                                <div className="absolute inset-0 bg-wood-900/40 group-hover:bg-wood-900/60 transition-colors duration-300 flex flex-col items-center justify-center text-white opacity-100">
-                                    <span className="text-xs tracking-widest uppercase mb-2 text-wood-200">{work.category}</span>
-                                    <h3 className="text-2xl font-serif font-bold">{work.title}</h3>
+                                <div className="absolute inset-0 bg-wood-900/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center text-white p-4 text-center">
+                                    <h3 className="text-xl md:text-2xl font-serif font-bold leading-relaxed">{work.title}</h3>
                                 </div>
                             </motion.div>
                         </Link>
