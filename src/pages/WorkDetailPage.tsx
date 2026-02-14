@@ -25,7 +25,7 @@ export const WorkDetailPage: React.FC = () => {
                 title={work.title}
                 description={work.description}
                 image={work.youtubeId ? `https://img.youtube.com/vi/${work.youtubeId}/maxresdefault.jpg` : work.imageUrl}
-                url={`https://filmk.vercel.app/works/${work.id}`}
+                url={`https://filmk-video.vercel.app/works/${work.id}`}
             />
             <div className="container mx-auto px-6">
                 <Link to="/works" className="inline-flex items-center text-wood-600 hover:text-wood-900 mb-8 transition-colors">

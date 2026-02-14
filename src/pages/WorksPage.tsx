@@ -11,7 +11,7 @@ export const WorksPage: React.FC = () => {
             <SEO
                 title="Works"
                 description="Film Kの映像制作実績一覧。ブランディングムービー、WebCM、採用動画など、様々なジャンルの実績をご覧いただけます。"
-                url="https://filmk.vercel.app/works"
+                url="https://filmk-video.vercel.app/works"
             />
             <div className="container mx-auto px-6">
                 <div className="text-center mb-16">

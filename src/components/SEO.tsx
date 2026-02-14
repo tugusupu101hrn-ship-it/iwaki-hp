@@ -12,7 +12,7 @@ interface SEOProps {
 export const SEO: React.FC<SEOProps> = ({
     title,
     description = "Film Kは、企業の価値を映像で表現する映像制作会社です。ブランディング、採用、プロモーションなど、目的に合わせた最適な映像をご提案します。",
-    url = "https://filmk.vercel.app",
+    url = "https://filmk-video.vercel.app",
     image = "/og-image.jpg",
     jsonLd
 }) => {

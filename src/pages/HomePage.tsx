@@ -13,8 +13,8 @@ export const HomePage: React.FC = () => {
         "@context": "https://schema.org",
         "@type": "VideoProductionService",
         "name": "Film K",
-        "url": "https://filmk.vercel.app",
-        "logo": "https://filmk.vercel.app/og-image.jpg",
+        "url": "https://filmk-video.vercel.app",
+        "logo": "https://filmk-video.vercel.app/og-image.jpg",
         "description": "企業の価値を映し出す映像制作会社。ブランディング、採用、イベント収録など、目的に合わせた最適な映像をご提案します。",
         "address": {
             "@type": "PostalAddress",
