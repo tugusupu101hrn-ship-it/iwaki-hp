@@ -1,7 +1,7 @@
 import { GoogleGenAI, Type } from "@google/genai";
 import { PlannerFormData, StrategyResponse } from "../types";
 
-const apiKey = process.env.API_KEY || '';
+const apiKey = import.meta.env.VITE_API_KEY || '';
 
 // Initialize lazily to avoid crash if API key is missing at startup
 let ai: GoogleGenAI | null = null;
