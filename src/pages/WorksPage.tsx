@@ -3,9 +3,16 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { works } from '../data/works';
 
+import { SEO } from '../components/SEO';
+
 export const WorksPage: React.FC = () => {
     return (
         <div className="pt-24 pb-12 bg-wood-50 min-h-screen">
+            <SEO
+                title="Works"
+                description="Film Kの映像制作実績一覧。ブランディングムービー、WebCM、採用動画など、様々なジャンルの実績をご覧いただけます。"
+                url="https://filmk.vercel.app/works"
+            />
             <div className="container mx-auto px-6">
                 <div className="text-center mb-16">
                     <span className="text-wood-600 tracking-widest text-sm font-bold uppercase block mb-2">Portfolio</span>

@@ -3,6 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowLeft, Play } from 'lucide-react';
 import { works } from '../data/works';
+import { SEO } from '../components/SEO';
 
 export const WorkDetailPage: React.FC = () => {
     const { id } = useParams<{ id: string }>();
@@ -17,8 +18,15 @@ export const WorkDetailPage: React.FC = () => {
         );
     }
 
+
     return (
         <div className="pt-24 pb-12 bg-wood-50 min-h-screen">
+            <SEO
+                title={work.title}
+                description={work.description}
+                image={work.youtubeId ? `https://img.youtube.com/vi/${work.youtubeId}/maxresdefault.jpg` : work.imageUrl}
+                url={`https://filmk.vercel.app/works/${work.id}`}
+            />
             <div className="container mx-auto px-6">
                 <Link to="/works" className="inline-flex items-center text-wood-600 hover:text-wood-900 mb-8 transition-colors">
                     <ArrowLeft size={20} className="mr-2" />
