@@ -6,7 +6,7 @@ export const About: React.FC = () => {
     <section id="about" className="py-24 bg-wood-50 relative overflow-hidden">
       <div className="container mx-auto px-6 relative z-10">
         <div className="flex flex-col md:flex-row items-center gap-16">
-          <motion.div 
+          <motion.div
             className="w-full md:w-1/2"
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -15,15 +15,15 @@ export const About: React.FC = () => {
           >
             <div className="relative">
               <div className="absolute top-4 left-4 w-full h-full border-2 border-wood-300 rounded-sm z-0"></div>
-              <img 
-                src="https://images.unsplash.com/photo-1605218427306-022ba8c6f661?q=80&w=2070&auto=format&fit=crop" 
-                alt="Filming process" 
+              <img
+                src="/images/philosophy.jpg"
+                alt="Filming process"
                 className="relative z-10 w-full rounded-sm shadow-xl grayscale hover:grayscale-0 transition-all duration-700"
               />
             </div>
           </motion.div>
-          
-          <motion.div 
+
+          <motion.div
             className="w-full md:w-1/2"
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -47,7 +47,7 @@ export const About: React.FC = () => {
           </motion.div>
         </div>
       </div>
-      
+
       {/* Wood texture overlay effect */}
       <div className="absolute inset-0 opacity-5 pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/wood-pattern.png')]"></div>
     </section>
