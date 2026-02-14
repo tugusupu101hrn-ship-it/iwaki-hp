@@ -40,7 +40,15 @@ export const WorkDetailPage: React.FC = () => {
 
                     {/* Video Player Container */}
                     <div className="relative aspect-video bg-black rounded-xl overflow-hidden shadow-2xl">
-                        {work.videoUrl ? (
+                        {work.youtubeId ? (
+                            <iframe
+                                className="w-full h-full"
+                                src={`https://www.youtube.com/embed/${work.youtubeId}`}
+                                title={work.title}
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowFullScreen
+                            ></iframe>
+                        ) : work.videoUrl ? (
                             <video
                                 controls
                                 autoPlay
@@ -60,8 +68,7 @@ export const WorkDetailPage: React.FC = () => {
 
                     <div className="mt-12 text-center">
                         <p className="text-sm text-wood-500">
-                            ※動画データは <code>public/videos</code> フォルダに配置してください。
-                            現在はダミーパスが設定されています。
+                            ※YouTube動画が表示されない場合は <code>src/data/works.ts</code> のIDを確認してください。
                         </p>
                     </div>
 

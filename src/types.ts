@@ -12,7 +12,8 @@ export interface WorkItem {
   title: string;
   category: string;
   imageUrl: string;
-  videoUrl?: string;
+  videoUrl?: string; // Keep for backward compatibility or local fallback
+  youtubeId?: string;
   description?: string;
 }
 
