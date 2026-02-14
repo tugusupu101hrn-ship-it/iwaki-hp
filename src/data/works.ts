@@ -34,7 +34,7 @@ export const works: WorkItem[] = [
         category: 'Event Report',
         imageUrl: 'https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=2070&auto=format&fit=crop',
         videoUrl: '/videos/Event Report.mp4',
-        youtubeId: 'c0nR7h84',
+        youtubeId: 'eM_eM_c0nR7h84',
         description: '札幌経営者交流会の紹介ムービー。'
     },
     {
