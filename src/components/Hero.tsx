@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { ArrowDown } from 'lucide-react';
+import { ArrowDown, ArrowRight } from 'lucide-react';
 import { Button } from './ui/Button';
 
 export const Hero: React.FC = () => {
@@ -13,19 +13,19 @@ export const Hero: React.FC = () => {
     <section className="relative h-screen flex items-center justify-center overflow-hidden bg-wood-950 text-white">
       {/* Background Video/Image with Overlay */}
       <div className="absolute inset-0 z-0">
-        <motion.div 
+        <motion.div
           style={{ y: y1 }}
           className="absolute inset-0 bg-cover bg-center opacity-60"
           initial={{ scale: 1.1 }}
           animate={{ scale: 1 }}
           transition={{ duration: 10, repeat: Infinity, repeatType: "reverse" }}
         >
-             {/* Using a cinematic abstract background */}
-             <img 
-              src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=2070&auto=format&fit=crop" 
-              alt="Cinematic Background" 
-              className="w-full h-full object-cover"
-            />
+          {/* Using a cinematic abstract background */}
+          <img
+            src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=2070&auto=format&fit=crop"
+            alt="Cinematic Background"
+            className="w-full h-full object-cover"
+          />
         </motion.div>
         <div className="absolute inset-0 bg-gradient-to-b from-wood-900/50 via-wood-900/30 to-wood-50"></div>
       </div>
@@ -49,14 +49,22 @@ export const Hero: React.FC = () => {
             <br />
             私たちは映像の力で、あなたの企業の「本質」を世界に届けます。
           </p>
-          
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-             <Button variant="secondary" onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth'})}>
-                お問い合わせ
-             </Button>
-             <Button variant="outline" className="border-white text-white hover:bg-white hover:text-wood-900" onClick={() => document.getElementById('works')?.scrollIntoView({ behavior: 'smooth'})}>
-                制作実績を見る
-             </Button>
+
+          <div className="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center items-center w-full px-4">
+            <Button
+              variant="primary"
+              onClick={() => document.getElementById('download')?.scrollIntoView({ behavior: 'smooth' })}
+              className="w-full sm:w-auto bg-wood-600 hover:bg-wood-500 text-white shadow-lg px-8 py-4 md:px-10 md:py-5 text-sm md:text-base font-bold tracking-widest transition-all duration-300 ease-out flex items-center justify-center gap-3 rounded-sm"
+            >
+              サービス資料ダウンロード
+            </Button>
+            <Button
+              variant="outline"
+              className="w-full sm:w-auto border border-white/30 bg-transparent text-white px-8 py-4 md:px-10 md:py-5 text-sm md:text-base font-light tracking-widest hover:bg-white/5 hover:border-white/60 transition-all duration-500 ease-out rounded-sm"
+              onClick={() => document.getElementById('works')?.scrollIntoView({ behavior: 'smooth' })}
+            >
+              制作実績を見る
+            </Button>
           </div>
         </motion.div>
       </div>
@@ -66,7 +74,7 @@ export const Hero: React.FC = () => {
       <motion.div style={{ y: y1 }} className="absolute top-20 -left-20 w-96 h-96 bg-wood-300/10 rounded-full blur-3xl z-0 pointer-events-none" />
 
       {/* Scroll Down Indicator */}
-      <motion.div 
+      <motion.div
         style={{ opacity }}
         className="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex flex-col items-center text-wood-800 animate-bounce"
       >

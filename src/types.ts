@@ -15,6 +15,10 @@ export interface WorkItem {
   videoUrl?: string; // Keep for backward compatibility or local fallback
   youtubeId?: string;
   description?: string;
+  subtitle?: string;
+  challenge?: string;
+  approach?: string;
+  execution?: string;
 }
 
 export interface StrategyResponse {

@@ -5,6 +5,8 @@ import { Footer } from './components/Footer';
 import { HomePage } from './pages/HomePage';
 import { WorksPage } from './pages/WorksPage';
 import { WorkDetailPage } from './pages/WorkDetailPage';
+import { ServicePage } from './pages/ServicePage';
+import { AboutPage } from './pages/AboutPage';
 
 function ScrollToTop() {
   const { pathname, hash } = useLocation();
@@ -49,6 +51,8 @@ function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/works" element={<WorksPage />} />
             <Route path="/works/:id" element={<WorkDetailPage />} />
+            <Route path="/service" element={<ServicePage />} />
+            <Route path="/about" element={<AboutPage />} />
           </Routes>
           <Footer />
         </div>

@@ -70,6 +70,23 @@ ${data.strategy.storyline.map((line, i) => `${i + 1}. ${line}`).join('\n')}
             </p>
           </div>
 
+          <div className="max-w-2xl mx-auto mb-12 bg-gradient-to-tr from-wood-50 to-white p-6 md:p-8 rounded-xl border border-wood-100 shadow-sm text-center">
+            <div className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-wood-900 text-white mb-4">
+              <Sparkles size={16} />
+            </div>
+            <h3 className="text-lg font-bold text-wood-900 mb-2 font-serif">まだ問い合わせる段階ではない方へ</h3>
+            <p className="text-sm text-wood-600 mb-5 leading-relaxed">
+              Film K AI Planner - あなたの課題を入力するだけで、最適な動画企画案をAIが即座にご提案します。
+            </p>
+            <Button
+              variant="outline"
+              className="border-wood-300 text-wood-700 hover:bg-wood-100 hover:text-wood-900 px-6 py-2 text-sm font-bold w-full sm:w-auto"
+              onClick={() => document.getElementById('ai-planner')?.scrollIntoView({ behavior: 'smooth' })}
+            >
+              AIに無料相談してみる
+            </Button>
+          </div>
+
           <form onSubmit={handleFormSubmit} className="space-y-6">
             {aiPlanData && (
               <div className="bg-wood-50 border border-wood-200 p-6 rounded-xl mb-8 text-left">

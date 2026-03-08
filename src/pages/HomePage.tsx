@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
 import { Hero } from '../components/Hero';
 import { About } from '../components/About';
-import { Services } from '../components/Services';
-import { AiPlanner } from '../components/AiPlanner';
 import { Works } from '../components/Works';
+import { AiPlanner } from '../components/AiPlanner';
+import { SplitPortal } from '../components/SplitPortal';
+import { DocumentDownload } from '../components/DocumentDownload';
 import { Contact } from '../components/Contact';
+import { AiPlannerFab } from '../components/AiPlannerFab';
+import { Expertise } from '../components/Expertise';
 import { AiPlanContext } from '../types';
 
 import { SEO } from '../components/SEO';
@@ -14,14 +17,21 @@ export const HomePage: React.FC = () => {
 
     const jsonLd = {
         "@context": "https://schema.org",
-        "@type": "VideoProductionService",
-        "name": "Film K",
+        "@type": ["VideoProductionService", "LocalBusiness"],
+        "name": "合同会社Film K",
         "url": "https://filmk-video.vercel.app",
         "logo": "https://filmk-video.vercel.app/og-image.jpg",
-        "description": "企業の価値を映し出す映像制作会社。ブランディング、採用、イベント収録など、目的に合わせた最適な映像をご提案します。",
+        "image": "https://filmk-video.vercel.app/og-image.jpg",
+        "description": "企業の真価を映し出す、北海道札幌市の映像制作会社。BtoBリード獲得や採用ブランディングに特化した最適な映像をご提案します。",
         "address": {
             "@type": "PostalAddress",
+            "addressLocality": "札幌市北区",
+            "addressRegion": "北海道",
             "addressCountry": "JP"
+        },
+        "founder": {
+            "@type": "Person",
+            "name": "岩城 圭佑"
         },
         "priceRange": "$$"
     };
@@ -29,12 +39,28 @@ export const HomePage: React.FC = () => {
     return (
         <main>
             <SEO jsonLd={jsonLd} />
+            {/* 1. Hero */}
             <Hero />
+
+            {/* 2. Philosophy */}
             <About />
-            <Services />
-            <AiPlanner onPlanGenerated={setAiPlanData} />
+
+            {/* 3. Our Expertise */}
+            <Expertise />
+
+            {/* 4. Works */}
             <Works />
+
+            {/* 5. AI Video Strategy */}
+            <AiPlanner onPlanGenerated={setAiPlanData} />
+
+            {/* Cinematic Splital Portal to subpages */}
+            <SplitPortal />
+
+            {/* 6. Contact / Document */}
+            <DocumentDownload />
             <Contact aiPlanData={aiPlanData} />
+            <AiPlannerFab />
         </main>
     );
 };

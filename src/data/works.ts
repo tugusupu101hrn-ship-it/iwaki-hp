@@ -3,56 +3,74 @@ import { WorkItem } from '../types';
 export const works: WorkItem[] = [
     {
         id: '1',
-        title: 'Tokyo Keibi Co., Ltd.',
-        category: 'Brand Movie',
-        imageUrl: 'https://images.unsplash.com/photo-1497215728101-856f4ea42174?q=80&w=2070&auto=format&fit=crop',
-        videoUrl: '/videos/brand-movie.mp4',
-        youtubeId: 'rL8684M7jr0',
-        description: '東京の日常を守る会社の社員の遍歴を見せたブランドムービー。'
+        title: '株式会社dld 那須塩原ショールーム様｜「火のある暮らし」へ誘う、店舗集客用コンセプトムービー',
+        subtitle: 'Client Works / Branding & Promotion',
+        category: 'Branding & Promotion',
+        imageUrl: 'https://images.unsplash.com/photo-1517482813133-149eb56345ec?q=80&w=2070&auto=format&fit=crop', // Fireplace / Interior
+        youtubeId: 'nIbHT1mgP0o', // Keeping previous dld ID for now
+        description: '那須塩原の美しいワイナリーの一角に店舗を構え、薪ストーブなど「火のある豊かな暮らし」を提案するdld様の集客課題を解決するコンセプトムービー。',
+        challenge: '那須塩原の美しいワイナリーの一角に店舗を構え、薪ストーブなど「火のある豊かな暮らし」を提案するdld様。洗練された空間と素晴らしい製品を持ちながらも、立地の特性や高級感ゆえに「外から眺めるだけで終わってしまい、入店への心理的ハードルが高い」という集客課題を抱えていらっしゃいました。',
+        approach: 'ターゲットを「審美眼を持った方々」に設定。機能説明ではなく、店頭ディスプレイを通じて「店外と店内の心理的な境界線をなくすこと」をミッションとしました。視聴者が「自分の邸宅にこの火があったら」と自然に想像し、自分事化できる「炎による癒やし」にフォーカスした構成を共に創り上げました。',
+        execution: 'ゆったりと落ち着いたリズムで編集を構築。シネマカメラによる質感豊かな描写とこだわりのカラーグレーディングで、炎の揺らぎや薪がはぜる音など「五感を刺激する温もり」を極限まで引き出し、思わず店内へ足を踏み入れたくなる映像体験に仕上げました。'
     },
     {
         id: '2',
-        title: 'Hirono Iron Works Co., Ltd.',
-        category: 'Company newsletter',
-        imageUrl: 'https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=2047&auto=format&fit=crop',
-        videoUrl: '/videos/web-cm.mp4',
-        youtubeId: 'cAY9KSCXSjk',
-        description: '会社設立80周年を記念し、100年に向けたメッセージ動画。'
+        title: 'OASIS RAGOON様｜「人生を美しさで満たす」唯一無二のサロン ブランディングムービー',
+        subtitle: 'Client Works / Branding & Promotion',
+        category: 'Branding & Promotion',
+        imageUrl: 'https://images.unsplash.com/photo-1560066984-138dadb4c035?q=80&w=1974&auto=format&fit=crop', // Salon / Beauty
+        youtubeId: '9xeXpneKdhY', // Keeping previous OASIS RAGOON ID
+        description: '美容業界の三ツ星店を目指すOASIS RAGOON様の、圧倒的な技術力とホスピタリティを「普遍的な価値」として映像化したブランディングムービー。',
+        challenge: '「容姿の美しさを超え、人生を美しさで満たす」を使命とし、美容業界の三ツ星店を目指すOASIS RAGOON様。その圧倒的な技術力とホスピタリティを、消費される流行ではなく数十年後も色褪せない「普遍的な価値」として映像化し、「ここなら任せられる」という絶対的な信頼感を感じていただくことがテーマでした。',
+        approach: '特定の層に絞らず、幅広い年齢層やご夫婦をペルソナに設定。「確かなエビデンスに基づく信頼の証明」と「日常のなかの特別感」を軸に、言葉ではなく施術のディテールや所作の美しさを徹底描写。外見の変化から内面の自信が溢れ、日常が豊かになっていくストーリーを構築しました。',
+        execution: '効率性よりも「たった一人の心を動かす圧倒的な質」にこだわり、名店レストランのような洗練された空気感を目指してカット割りとライティングを緻密に設計。没入感のあるシネマティックなトーンで、「自分もこの空間の一部になりたい」と惹きつける映像美へと昇華させています。'
     },
     {
         id: '3',
-        title: 'Tokyo Keibi Co., Ltd',
-        category: 'Recruit',
-        imageUrl: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2070&auto=format&fit=crop',
-        videoUrl: '/videos/recruit.mp4',
-        youtubeId: 'N7nQqLsHpjQ',
-        description: '新規立ち上げに伴う採用募集ムービー。'
+        title: '株式会社東京警備様｜「現場から経営へ」キャリアの可能性を描く採用ドキュメンタリー',
+        subtitle: 'Client Works / Recruit & Branding',
+        category: 'Recruit & Branding',
+        imageUrl: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=2071&auto=format&fit=crop', // Business / Urban
+        youtubeId: 'rL8684M7jr0', // Keeping previous Tokyo Keibi ID
+        description: '「現場を知る人間こそが会社を強くする」という企業文化を伝える、東京警備様の採用ドキュメンタリー。',
+        challenge: '社員一人ひとりの幸福と会社の成長をつなぐことを大切にされている東京警備様。現場職と総合職のキャリアが分断されがちな警備業界において、「現場を知る人間こそが会社を強くする」という叩き上げを良しとする公正な企業文化を求職者にどう伝え、心に火をつけるかが採用における課題でした。',
+        approach: '美辞麗句を並べるのではなく、現場からキャリアを積み上げ営業課長として活躍する実在の社員様を主役にしたドキュメンタリー構成をご提案。その等身大の遍歴にフォーカスすることで、「ここなら自分の経験が武器になる」と求職者が強く自分事化できるストーリーラインを共に構築しました。',
+        execution: '過剰な演出は削ぎ落とし、働く姿や飾らない言葉を、シネマカメラ特有の被写界深度の浅い映像と温かみのあるカラーグレーディングで描写。営業課長の「背中」や社長の人柄から滲み出るリアルな空気感を切り取り、求職者の背中を力強く押す作品へと仕上げています。'
     },
     {
         id: '4',
-        title: 'Syusei Club',
-        category: 'Event Report',
-        imageUrl: 'https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=2070&auto=format&fit=crop',
-        videoUrl: '/videos/Event Report.mp4',
-        youtubeId: 'eM_c0nR7h84',
-        description: '札幌経営者交流会の紹介ムービー。'
+        title: '株式会社廣野鐵工所様｜80年の歴史から次の100年へ。「ひとづくり・ものづくり」の誇りを繋ぐ周年記念ムービー',
+        subtitle: 'Client Works / Corporate VP & Inner Branding',
+        category: 'Corporate VP & Inner Branding',
+        imageUrl: 'https://images.unsplash.com/photo-1580983538466-9bb2b2cb3cb0?q=80&w=2072&auto=format&fit=crop', // Factory / Sparks
+        youtubeId: 'cAY9KSCXSjk', // Keeping previous Hirono Tekko ID
+        description: '創業80周年を迎えた廣野鐵工所様の、社員の「誇り」と「熱量」を内側から高めるインナーブランディングムービー。',
+        challenge: '創業80周年を迎え、世界の「食」の基盤を支え続ける廣野鐵工所様。工場長が次期社長に就任する転換期において、エンドユーザーから見えにくいBtoB部品製造の社会的価値を再定義し、共に働く社員の「誇り」と「熱量」を内側から高めるインナーブランディングが重要なテーマでした。',
+        approach: '「社員の心が動く映像」を方針とし、日々向き合う鉄の部品がトラクターとなり食卓へ幸せを届けるという「ミクロとマクロの繋がり」をストーリー化。先代からの誠実なバトンを受け継ぎ、新しい風を吹き込もうとする次期社長の決意と、企業の熱量を一つのシナリオに練り上げました。',
+        execution: '工場の圧倒的な熱気、飛び散る火花、長年使い込まれた機械の重厚感、そして職人たちの真剣な眼差しを、シネマカメラと重厚なカラーグレーディングで描写。リアルな環境音を臨場感たっぷりに重ね、100年続く企業の「背骨」を視覚と聴覚で力強く証明しています。'
     },
     {
         id: '5',
-        title: 'OASIS RAGOON',
-        category: 'Promotion',
-        imageUrl: 'https://images.unsplash.com/photo-1445964047600-cdbdb873673d?q=80&w=1984&auto=format&fit=crop',
-        videoUrl: '/videos/promotion.mp4',
-        youtubeId: '9xeXpneKdhY',
-        description: '神奈川にある美容整形のプロモーション映像。'
+        title: '株式会社東京警備様｜東京進出・オープニングスタッフ募集。「現場から役員へ」熱意が伝わるメッセージムービー',
+        subtitle: 'Client Works / Recruit & Branding',
+        category: 'Recruit & Branding',
+        imageUrl: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2070&auto=format&fit=crop', // Security / Field work
+        youtubeId: 'N7nQqLsHpjQ', // Keeping previous second Tokyo Keibi ID
+        description: '東京という新天地でのオープニングスタッフ募集において、「ここで働く魅力と熱量」を求職者に届け、現場の警備スタッフを集めるためのメッセージムービー。',
+        challenge: '北海道の株式会社WAKABA（HD）グループから新たに立ち上がった東京警備様。東京という新天地でのオープニングスタッフ募集において、知名度がない中でいかに「ここで働く魅力と熱量」を求職者に届け、現場の警備スタッフを集めるかが過渡期の課題でした。',
+        approach: '最大の魅力である「現場から役員になれる道と、やる気を評価する風土」を伝えるため、今いる社員の「生の声」を繋ぐメッセージ動画をご提案。実際にキャリアを築いてきた社員の言葉を通し、求職者が「自分も挑戦したい」と心を動かされる構成を創り上げました。',
+        execution: '東京警備様の雰囲気にあったテンポで編集。求職者に直接語りかけるような構図と、誠実さが際立つクリーンなカラーグレーディングにより、嘘偽りのない「企業のリアルな温度感」をシネマティックにパッケージングしています。'
     },
     {
         id: '6',
-        title: 'dld',
-        category: 'Instore Promotion',
-        imageUrl: 'https://images.unsplash.com/photo-1625246333195-09d966332410?q=80&w=1979&auto=format&fit=crop',
-        videoUrl: '/videos/product.mp4',
-        youtubeId: 'nIbHT1mgP0o',
-        description: 'dld那須塩原店のインストアプロモーションムービー。'
-    },
+        title: '守成クラブ 札幌清流会場様｜「怪しい・怖い」を払拭し、温かな熱量を伝える入会促進ムービー',
+        subtitle: 'Client Works / Event & Promotion',
+        category: 'Event & Promotion',
+        imageUrl: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=2000&auto=format&fit=crop', // Business Meeting / Network
+        youtubeId: 'eM_c0nR7h84', // Keeping previous Syusei Club ID
+        description: '経営者交流会「守成クラブ」様への誤解や警戒心を払拭し、「仕事につながる温かい会」であることを伝える入会促進ムービー。',
+        challenge: '活発な商談が行われる経営者交流会「守成クラブ」様。外部からは「何が行われているかわからない」という状態であり、「マルチ商法ではないか」「怖そう」といった誤解や警戒心から入会を見送られてしまうことが大きな課題でした。',
+        approach: '「仕事につながる温かい会」であることを証明するため、交流会の活気をそのまま映し出し、札幌清流会場の代表と最近入会した女性経営者にインタビューを実施。「代表の理念」と「初心者の安心感」という両極の視点から生の声を届け、入会前の不安を払拭する構成を創り上げました。',
+        execution: '警戒心を拭い去るため、参加者同士の笑顔や温かいコミュニケーションの瞬間を丁寧に描写。インタビューは誠実さが際立つライティングと温かみのあるカラーグレーディングを施し、交流の熱量と経営者たちの人間味をシネマティックに束ねて新規入会を後押ししています。'
+    }
 ];

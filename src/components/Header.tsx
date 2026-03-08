@@ -18,9 +18,11 @@ export const Header: React.FC = () => {
   }, []);
 
   const navLinks = [
-    { name: 'About', href: '#about' },
-    { name: 'Services', href: '#services' },
-    { name: 'Works', href: '#works' },
+    { name: 'Top', href: '/' },
+    { name: 'Philosophy', href: '#about' },
+    { name: 'Works', href: '/works' },
+    { name: 'Service', href: '/service' },
+    { name: 'About', href: '/about' },
     { name: 'Contact', href: '#contact' },
   ];
 
@@ -28,11 +30,13 @@ export const Header: React.FC = () => {
     e.preventDefault();
     setIsMobileMenuOpen(false);
 
-    if (location.pathname !== '/' && href.startsWith('#')) {
-      navigate('/' + href);
+    if (href.startsWith('#')) {
+      if (location.pathname !== '/') {
+        navigate('/' + href);
+      } else {
+        navigate(href);
+      }
     } else {
-      // If we are already on home and clicking a hash link, navigate helps update URL hash
-      // and trigger App.tsx scroll logic
       navigate(href);
     }
   };
@@ -76,14 +80,18 @@ export const Header: React.FC = () => {
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-white transition-all group-hover:w-full"></span>
               </a>
             ))}
-            <a
-              href="#contact"
-              className="bg-wood-100 text-wood-900 px-5 py-2 rounded-full text-sm font-medium hover:bg-white transition-colors"
-              onClick={(e) => handleNavClick(e, '#contact')}
-            >
-              Start Project
-            </a>
           </nav>
+
+          {/* Always Visible Document Download Button */}
+          <div className="flex items-center gap-3 md:gap-4 ml-auto mr-4 md:ml-8 md:mr-0 z-50">
+            <a
+              href="#download"
+              className="bg-wood-600/90 hover:bg-wood-500 text-white px-4 py-2 md:px-6 md:py-2.5 rounded-full text-xs md:text-sm font-bold transition-all shadow-md hover:shadow-lg whitespace-nowrap flex items-center gap-2"
+              onClick={(e) => handleNavClick(e, '#download')}
+            >
+              <span className="hidden md:inline">サービス</span>資料DL
+            </a>
+          </div>
 
           {/* Mobile Menu Toggle */}
           <button

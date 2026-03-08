@@ -7,12 +7,12 @@ import { works } from '../data/works';
 
 export const Works: React.FC = () => {
   return (
-    <section id="works" className="py-24 bg-wood-50">
+    <section id="works" className="py-32 bg-wood-50">
       <div className="container mx-auto px-6">
-        <div className="flex justify-between items-end mb-12">
+        <div className="flex justify-between items-end mb-16">
           <div>
-            <span className="text-wood-600 tracking-widest text-sm font-bold uppercase block mb-2">Our Works</span>
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-wood-900">制作実績</h2>
+            <span className="text-wood-500 tracking-[0.3em] text-xs font-bold uppercase block mb-4">Our Works</span>
+            <h2 className="text-4xl md:text-5xl font-serif font-bold text-wood-900">制作実績</h2>
           </div>
           <Link to="/works" className="hidden md:block text-wood-600 hover:text-wood-900 font-medium underline underline-offset-4 decoration-1">
             View All Works
@@ -23,21 +23,37 @@ export const Works: React.FC = () => {
           {works.map((work, index) => (
             <Link to={`/works/${work.id}`} key={work.id}>
               <motion.div
-                className="group relative overflow-hidden rounded-sm aspect-video cursor-pointer"
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="group relative overflow-hidden rounded-lg bg-white shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col h-full border border-wood-100"
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.8, delay: index * 0.15, ease: "easeOut" }}
               >
-                <img
-                  src={work.youtubeId ? `https://img.youtube.com/vi/${work.youtubeId}/maxresdefault.jpg` : work.imageUrl}
-                  alt={work.title}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-wood-900/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center text-white p-6 text-center m-2">
-                  <span className="text-xs tracking-[0.2em] uppercase mb-3 text-wood-300">{work.category}</span>
-                  <h3 className="text-xl md:text-2xl font-serif font-bold">{work.title}</h3>
-                  <div className="w-8 h-[1px] bg-wood-300 mt-4 scale-x-0 group-hover:scale-x-100 transition-transform duration-500 delay-100"></div>
+                <div className="relative aspect-video overflow-hidden">
+                  <img
+                    src={work.youtubeId ? `https://img.youtube.com/vi/${work.youtubeId}/maxresdefault.jpg` : work.imageUrl}
+                    alt={work.title}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
+                  <div className="absolute top-4 left-4 bg-wood-900 text-white text-xs font-bold px-3 py-1 rounded-sm tracking-wider shadow-lg">
+                    {work.category || "プロモーション"}
+                  </div>
+                </div>
+                <div className="p-6 flex flex-col flex-grow">
+                  <p className="text-wood-500 text-xs font-bold mb-3 tracking-wide uppercase">
+                    {work.subtitle || work.category}
+                  </p>
+                  <h3 className="text-xl md:text-2xl font-serif font-bold text-wood-900 mb-4 leading-relaxed group-hover:text-wood-600 transition-colors">
+                    {work.title.split('｜')[0]}
+                    {work.title.includes('｜') && (
+                      <span className="block text-[0.80em] font-sans font-normal text-wood-500 mt-2 leading-relaxed">
+                        {work.title.split('｜')[1]}
+                      </span>
+                    )}
+                  </h3>
+                  <p className="text-wood-600 text-sm mt-auto font-light leading-loose tracking-wide line-clamp-3">
+                    {work.description}
+                  </p>
                 </div>
               </motion.div>
             </Link>
