@@ -1,15 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Top/Home page -->
   <url>
-    <loc>https://filmk-video.vercel.app/</loc>
-    <lastmod>2026-02-14</lastmod>
-    <changefreq>monthly</changefreq>
+    <loc>https://film-k.com/</loc>
+    <lastmod>2026-06-16</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
+  <!-- Maternity Photography page -->
   <url>
-    <loc>https://filmk-video.vercel.app/works</loc>
-    <lastmod>2026-02-14</lastmod>
+    <loc>https://film-k.com/#maternity</loc>
+    <lastmod>2026-06-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <!-- Bridal Photography / Cinematic Wedding page -->
+  <url>
+    <loc>https://film-k.com/#bridal</loc>
+    <lastmod>2026-06-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <!-- Portfolio / Photo Gallery -->
+  <url>
+    <loc>https://film-k.com/#gallery</loc>
+    <lastmod>2026-06-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <!-- Real-time dynamic price calculator -->
+  <url>
+    <loc>https://film-k.com/#price-estimator</loc>
+    <lastmod>2026-06-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- Inquiry / Booking forms -->
+  <url>
+    <loc>https://film-k.com/#contact</loc>
+    <lastmod>2026-06-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 </urlset>
