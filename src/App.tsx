@@ -104,6 +104,13 @@ export default function App() {
                   ホーム
                 </button>
                 <button 
+                  id="nav-corporate-btn"
+                  onClick={() => navigateTo('corporate')} 
+                  className={`py-1 cursor-pointer hover:text-natural-accent transition-colors ${activeView === 'corporate' ? 'text-natural-accent border-b border-natural-dark' : 'text-natural-dark/80'}`}
+                >
+                  映像制作
+                </button>
+                <button 
                   id="nav-maternity-btn"
                   onClick={() => navigateTo('maternity')} 
                   className={`py-1 cursor-pointer hover:text-natural-accent transition-colors ${activeView === 'maternity' ? 'text-natural-accent border-b border-natural-dark' : 'text-natural-dark/80'}`}
@@ -130,13 +137,6 @@ export default function App() {
                   className="py-1 cursor-pointer hover:text-natural-accent transition-colors text-natural-dark/80"
                 >
                   料金計算
-                </button>
-                <button 
-                  id="nav-corporate-btn"
-                  onClick={() => navigateTo('corporate')} 
-                  className={`py-1 cursor-pointer hover:text-natural-accent transition-colors ${activeView === 'corporate' ? 'text-natural-accent border-b border-natural-dark' : 'text-natural-dark/80'}`}
-                >
-                  映像制作
                 </button>
               </nav>
 

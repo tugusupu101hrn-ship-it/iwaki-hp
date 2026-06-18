@@ -10,6 +10,21 @@
   --color-natural-gold: #A68966;
   --color-natural-dark: #4A3728;
   
+  --color-wood-50: #fbf7f4;
+  --color-wood-100: #f5efe8;
+  --color-wood-200: #ece0d3;
+  --color-wood-300: #dec6b3;
+  --color-wood-400: #cda68b;
+  --color-wood-500: #bd8969;
+  --color-wood-600: #af7456;
+  --color-wood-700: #925d45;
+  --color-wood-800: #7a4e3d;
+  --color-wood-900: #634034;
+  --color-wood-950: #35211a;
+
+  --color-nature-green: #5c6b54;
+  --color-nature-dark-green: #3a4535;
+  
   --font-serif: "Playfair Display", "Noto Serif JP", "YuMincho", "Yu Mincho", "Hiragino Mincho ProN", serif;
   --font-sans: "Inter", "Space Grotesk", "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Meiryo", sans-serif;
   --font-mono: "JetBrains Mono", monospace;
