@@ -21,6 +21,7 @@ import SpecializedExhibitions from './components/SpecializedExhibitions';
 import GoldSelection from './components/GoldSelection';
 import CorporateSolutions from './components/CorporateSolutions';
 import Sitemap from './components/Sitemap';
+import CorporateSpecial from './components/CorporateSpecial';
 import { 
   Camera, 
   Tv, 
@@ -130,6 +131,13 @@ export default function App() {
                 >
                   料金計算
                 </button>
+                <button 
+                  id="nav-corporate-btn"
+                  onClick={() => navigateTo('corporate')} 
+                  className={`py-1 cursor-pointer hover:text-natural-accent transition-colors ${activeView === 'corporate' ? 'text-natural-accent border-b border-natural-dark' : 'text-natural-dark/80'}`}
+                >
+                  映像制作
+                </button>
               </nav>
 
               {/* Right Side Action Button */}
@@ -205,6 +213,14 @@ export default function App() {
                 >
                   料金計算
                 </button>
+                <button 
+                  id="mobile-nav-corporate"
+                  onClick={() => navigateTo('corporate')} 
+                  className="w-full text-left py-2 border-b border-natural-sand/40 font-semibold text-natural-accent flex justify-between items-center"
+                >
+                  <span>映像制作特設ページ</span>
+                  <ChevronRight className="w-4 h-4 text-natural-accent" />
+                </button>
                 <a 
                   id="mobile-nav-contact"
                   href="#contact"
@@ -244,6 +260,19 @@ export default function App() {
                   transition={{ duration: 0.4 }}
                 >
                   <BridalSpecial onBackToHome={() => setActiveView('home')} />
+                </motion.div>
+              )}
+
+              {/* VIEW: CORPORATE SPECIAL PAGE */}
+              {activeView === 'corporate' && (
+                <motion.div
+                  key="corporate-page"
+                  initial={{ opacity: 0, y: 15 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -15 }}
+                  transition={{ duration: 0.4 }}
+                >
+                  <CorporateSpecial onBackToHome={() => setActiveView('home')} />
                 </motion.div>
               )}
 

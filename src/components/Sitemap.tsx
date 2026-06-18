@@ -53,6 +53,15 @@ export default function Sitemap({ navigateTo }: SitemapProps) {
               </button>
             </li>
             <li>
+              <button 
+                id="sitemap-btn-corporate"
+                onClick={() => navigateTo('corporate')} 
+                className="hover:text-[#dfd2c0] hover:underline transition-all cursor-pointer text-left"
+              >
+                ・映像制作特設ページ (AIプランナー)
+              </button>
+            </li>
+            <li>
               <a 
                 href="#contact" 
                 onClick={() => navigateTo('contact')} 
