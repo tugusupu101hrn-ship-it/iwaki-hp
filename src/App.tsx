@@ -48,11 +48,17 @@ export default function App() {
 
   // Quick navigation helper
   const navigateTo = (view: AppView) => {
-    setActiveView(view);
     setMobileMenuOpen(false);
     
-    // Smooth scroll to relevant elements on homepage
-    if (view === 'gallery' || view === 'estimator' || view === 'contact') {
+    if (view === 'gallery') {
+      setActiveView('photo');
+      setTimeout(() => {
+        const element = document.getElementById('gallery');
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    } else if (view === 'estimator' || view === 'contact') {
       setActiveView('home');
       setTimeout(() => {
         const id = view === 'estimator' ? 'price-estimator' : view;
@@ -62,6 +68,7 @@ export default function App() {
         }
       }, 100);
     } else {
+      setActiveView(view);
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   };
@@ -104,11 +111,11 @@ export default function App() {
                   ホーム
                 </button>
                 <button 
-                  id="nav-corporate-btn"
-                  onClick={() => navigateTo('corporate')} 
-                  className={`py-1 cursor-pointer hover:text-natural-accent transition-colors ${activeView === 'corporate' ? 'text-natural-accent border-b border-natural-dark' : 'text-natural-dark/80'}`}
+                  id="nav-photo-btn"
+                  onClick={() => navigateTo('photo')} 
+                  className={`py-1 cursor-pointer hover:text-natural-accent transition-colors ${activeView === 'photo' ? 'text-natural-accent border-b border-natural-dark' : 'text-natural-dark/80'}`}
                 >
-                  映像制作
+                  フォト
                 </button>
                 <button 
                   id="nav-maternity-btn"
@@ -214,11 +221,11 @@ export default function App() {
                   料金計算
                 </button>
                 <button 
-                  id="mobile-nav-corporate"
-                  onClick={() => navigateTo('corporate')} 
+                  id="mobile-nav-photo"
+                  onClick={() => navigateTo('photo')} 
                   className="w-full text-left py-2 border-b border-natural-sand/40 font-semibold text-natural-accent flex justify-between items-center"
                 >
-                  <span>映像制作特設ページ</span>
+                  <span>フォトギャラリー特設ページ</span>
                   <ChevronRight className="w-4 h-4 text-natural-accent" />
                 </button>
                 <a 
@@ -263,23 +270,22 @@ export default function App() {
                 </motion.div>
               )}
 
-              {/* VIEW: CORPORATE SPECIAL PAGE */}
-              {activeView === 'corporate' && (
-                <motion.div
-                  key="corporate-page"
-                  initial={{ opacity: 0, y: 15 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -15 }}
-                  transition={{ duration: 0.4 }}
-                >
-                  <CorporateSpecial onBackToHome={() => setActiveView('home')} />
-                </motion.div>
-              )}
-
-              {/* VIEW: HOME (The Unified Cinema and Photography Space) */}
+              {/* VIEW: HOME (The Video-First Corporate & AI Strategy Space) */}
               {activeView === 'home' && (
                 <motion.div
                   key="home-page"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                >
+                  <CorporateSpecial onBackToPhoto={() => navigateTo('photo')} navigateTo={navigateTo} />
+                </motion.div>
+              )}
+
+              {/* VIEW: PHOTO (The Unified Photo and Scenic Portfolio Space) */}
+              {activeView === 'photo' && (
+                <motion.div
+                  key="photo-page"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}

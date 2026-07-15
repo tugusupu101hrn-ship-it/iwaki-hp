@@ -22,7 +22,16 @@ export default function Sitemap({ navigateTo }: SitemapProps) {
                 onClick={() => navigateTo('home')} 
                 className="hover:text-[#dfd2c0] hover:underline transition-all cursor-pointer text-left"
               >
-                ・ホーム (トップページ)
+                ・ホーム (映像制作トップページ)
+              </button>
+            </li>
+            <li>
+              <button 
+                id="sitemap-btn-photo"
+                onClick={() => navigateTo('photo')} 
+                className="hover:text-[#dfd2c0] hover:underline transition-all cursor-pointer text-left"
+              >
+                ・フォト (写真撮影特設トップページ)
               </button>
             </li>
             <li>
@@ -50,15 +59,6 @@ export default function Sitemap({ navigateTo }: SitemapProps) {
                 className="hover:text-[#dfd2c0] hover:underline transition-all cursor-pointer text-left"
               >
                 ・無料相談 ＆ 撮影予約フォーム
-              </button>
-            </li>
-            <li>
-              <button 
-                id="sitemap-btn-corporate"
-                onClick={() => navigateTo('corporate')} 
-                className="hover:text-[#dfd2c0] hover:underline transition-all cursor-pointer text-left"
-              >
-                ・映像制作特設ページ (AIプランナー)
               </button>
             </li>
             <li>

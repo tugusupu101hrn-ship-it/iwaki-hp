@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-export type AppView = 'home' | 'maternity' | 'bridal' | 'gallery' | 'estimator' | 'contact' | 'corporate';
+export type AppView = 'home' | 'photo' | 'maternity' | 'bridal' | 'gallery' | 'estimator' | 'contact';
 
 export interface GalleryItem {
   id: string;
