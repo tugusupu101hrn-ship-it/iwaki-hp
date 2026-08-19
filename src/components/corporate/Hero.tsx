@@ -37,11 +37,11 @@ export const Hero: React.FC = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.5 }}
         >
-          <h2 className="text-wood-200 text-lg md:text-xl font-serif tracking-[0.2em] mb-4">
+          <h2 className="text-wood-400 text-xs sm:text-sm md:text-base font-bold tracking-[0.3em] mb-4">
             FILM K PRODUCTION
           </h2>
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif font-bold mb-8 leading-tight drop-shadow-lg">
-            企業の<span className="text-wood-300">真価</span>を<br />
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-bold mb-8 leading-tight drop-shadow-lg">
+            企業の<span className="text-wood-300">想い</span>を<br />
             映し出す
           </h1>
           <p className="text-wood-100 text-sm md:text-base max-w-lg mx-auto mb-10 leading-loose tracking-wide font-light">

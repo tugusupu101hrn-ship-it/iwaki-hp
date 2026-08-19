@@ -37,14 +37,14 @@ export default function CorporateSpecial({ onBackToPhoto, navigateTo }: Corporat
       {/* 1. Hero */}
       <Hero />
 
-      {/* 2. Philosophy */}
+      {/* 2. Works */}
+      <Works />
+
+      {/* 3. Philosophy */}
       <About />
 
-      {/* 3. Our Expertise */}
+      {/* 4. Our Expertise */}
       <Expertise />
-
-      {/* 4. Works */}
-      <Works />
 
       {/* 5. AI Video Strategy */}
       <AiPlanner onPlanGenerated={setAiPlanData} />
