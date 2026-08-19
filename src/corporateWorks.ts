@@ -72,5 +72,41 @@ export const works: WorkItem[] = [
         challenge: '活発な商談が行われる経営者交流会「守成クラブ」様。外部からは「何が行われているかわからない」という状態であり、「マルチ商法ではないか」「怖そう」といった誤解や警戒心から入会を見送られてしまうことが大きな課題でした。',
         approach: '「仕事につながる温かい会」であることを証明するため、交流会の活気をそのまま映し出し、札幌清流会場の代表と最近入会した女性経営者にインタビューを実施。「代表の理念」と「初心者の安心感」という両極の視点から生の声を届け、入会前の不安を払拭する構成を創り上げました。',
         execution: '警戒心を拭い去るため、参加者同士の笑顔や温かいコミュニケーションの瞬間を丁寧に描写。インタビューは誠実さが際立つライティングと温かみのあるカラーグレーディングを施し、交流の熱量と経営者たちの人間味をシネマティックに束ねて新規入会を後押ししています。'
+    },
+    {
+        id: '7',
+        title: 'CC Hokkaido Region Launch Gala Party - CC Sapporo 1 Chapter',
+        subtitle: 'Client Works / Event & Promotion',
+        category: 'Event & Promotion',
+        imageUrl: 'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=2069&auto=format&fit=crop',
+        youtubeId: 'tpAo170817I',
+        description: '2026年7月31日、札幌の札幌グランドホテルにて、CorporateConnections® Japanにとって新たな一歩となる「Hokkaido Region Launch Gala Party – CC Sapporo 1 Chapter」が開催されました。北海道チャプターの立ち上げの瞬さに立ち会えて光栄でした。「始祖開拓」北海道から世界に続く道を0から作っていくというCC札幌1の皆様の決意の想いを、動画にも込めさせていただきました。'
+    },
+    {
+        id: '8',
+        title: '株式会社よかった様｜「車への想い」を繋ぐ事業紹介ムービー',
+        subtitle: 'Client Works / Corporate VP & Promotion',
+        category: 'Corporate VP & Promotion',
+        imageUrl: 'https://images.unsplash.com/photo-1560066984-138dadb4c035?q=80&w=1974&auto=format&fit=crop',
+        youtubeId: 'FmN7TTfKLOo',
+        description: '「営業や交流会等で会社の紹介をする映像がなく、見せて内容がわかる映像を」とのご依頼で作成いたしました。全員を別々でインタビューさせていただいていますが、会社で働いている方々の車に対する想いが全員揃っていてお客様の大切にしている車への気持ちが溢れているとても素敵な会社です。'
+    },
+    {
+        id: '9',
+        title: '釧路衛星バス様｜「大切な人を運ぶ」使命を背負ったパーパスムービー',
+        subtitle: 'Client Works / Corporate VP & Branding',
+        category: 'Corporate VP & Branding',
+        imageUrl: 'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?q=80&w=2069&auto=format&fit=crop',
+        youtubeId: 'EVH8gW3zonM',
+        description: '釧路衛星様のバス事業のムービーを作成いたしました。学校の送り迎えなど「誰かの大切な人を運ぶ」という使命を背負って運営されているバス会社様の素敵な想いを動画に込めさせていただきました。'
+    },
+    {
+        id: '10',
+        title: 'Fuz.HOKKAIDO.EXE様｜年に1回のホーム戦を盛り上げるためのイベント告知ムービー',
+        subtitle: 'Client Works / Event & Promotion',
+        category: 'Event & Promotion',
+        imageUrl: 'https://images.unsplash.com/photo-1544698310-74ea9d1c8258?q=80&w=2072&auto=format&fit=crop',
+        youtubeId: '91oV5Is9qaE',
+        description: '3人制プロバスケットボールチームFuz.HOKKAIDO.EXE様のイベント告知ムービーを作成させていただきました。札幌の赤煉瓦庁舎前の広場（通称赤プラ）でバスケットコートを作成し、年に1回のホーム戦を盛り上げるための告知動画として作成させていただきました。'
     }
 ];
