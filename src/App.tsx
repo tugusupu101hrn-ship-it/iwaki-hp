@@ -5,6 +5,7 @@
 
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
+import { Analytics } from '@vercel/analytics/react';
 import { AppView } from './types';
 import { CUSTOM_IMAGES, REVIEWS, FILM_K_PROFILE, GENERAL_PLANS, GOLD_SELECTION_PLANS } from './data';
 import CameraLensIntro from './components/CameraLensIntro';
@@ -355,6 +356,7 @@ export default function App() {
         </div>
       )}
 
+      <Analytics />
     </div>
   );
 }
