@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Camera, Compass, Sliders, Play } from 'lucide-react';
 
@@ -14,6 +14,11 @@ interface CameraLensIntroProps {
 export default function CameraLensIntro({ onEnter }: CameraLensIntroProps) {
   const [isOpening, setIsOpening] = useState(false);
   const [apertureValue, setApertureValue] = useState(1.2);
+  const shutterButtonRef = useRef<HTMLButtonElement>(null);
+
+  useEffect(() => {
+    shutterButtonRef.current?.focus({ preventScroll: true });
+  }, []);
 
   // Synthesize a cool camera shutter click + motor wind sound using Web Audio API!
   const playShutterSound = () => {
@@ -97,8 +102,14 @@ export default function CameraLensIntro({ onEnter }: CameraLensIntroProps) {
 
   return (
     <div 
-      className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-[#1d140e] select-none text-[#dfd2c0] overflow-hidden"
+      className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-[#1d140e] select-none text-[#dfd2c0] overflow-hidden"
       style={{ fontFamily: '"Inter", sans-serif' }}
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="intro-title"
+      onKeyDown={(event) => {
+        if (event.key === 'Escape') handleShutterTrigger();
+      }}
     >
       {/* Background ambient stars/particles and technical HUD lines */}
       <div className="absolute inset-x-0 bottom-10 flex justify-between px-12 text-xs font-mono tracking-widest text-[#8b5a2b] uppercase max-w-7xl mx-auto w-full opacity-60">
@@ -129,7 +140,7 @@ export default function CameraLensIntro({ onEnter }: CameraLensIntroProps) {
             animate={{ opacity: [0, 1, 1, 0] }}
             exit={{ opacity: 0 }}
             transition={{ duration: 1.3, times: [0, 0.05, 0.25, 1], ease: 'easeInOut' }}
-            className="fixed inset-0 z-55 bg-[#fbf9f4] pointer-events-none"
+            className="fixed inset-0 z-[110] bg-[#fbf9f4] pointer-events-none"
           />
         )}
       </AnimatePresence>
@@ -147,14 +158,15 @@ export default function CameraLensIntro({ onEnter }: CameraLensIntroProps) {
           HOKKAIDO CINEMATOGRAPHY
         </motion.p>
         
-        <motion.h1 
+        <motion.div
+          id="intro-title"
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 0.8 }}
           className="text-5xl font-sans tracking-tight font-light text-white mb-8"
         >
           Film K
-        </motion.h1>
+        </motion.div>
 
         {/* Outer Ring & Aperture System */}
         <div className="relative w-64 h-64 md:w-76 md:h-76 rounded-full border border-[#8b5a2b]/30 flex items-center justify-center bg-[#150d09] shadow-2xl p-4 mb-8 overflow-hidden">
@@ -233,9 +245,11 @@ export default function CameraLensIntro({ onEnter }: CameraLensIntroProps) {
           {/* Shutter mechanical click ring - Foreground Button Layer z-30 */}
           <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-30">
             <motion.button
+              ref={shutterButtonRef}
               id="shutter-trigger"
               onClick={handleShutterTrigger}
               disabled={isOpening}
+              aria-label="SHOOTしてFILM Kのトップページを表示"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.92 }}
               className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-gradient-to-br from-[#dfd2c0] to-[#b7a38b] hover:from-white hover:to-[#dfd2c0] text-[#4a2c11] flex flex-col items-center justify-center shadow-lg transition-colors cursor-pointer pointer-events-auto focus:outline-none focus:ring-4 focus:ring-[#8b5a2b]"
@@ -262,6 +276,7 @@ export default function CameraLensIntro({ onEnter }: CameraLensIntroProps) {
             <input
               id="iris-slider"
               type="range"
+              aria-label="レンズの絞り値"
               min="1.2"
               max="4.0"
               step="0.1"
