@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { AppView } from './types';
 import { CUSTOM_IMAGES, REVIEWS, FILM_K_PROFILE, GENERAL_PLANS, GOLD_SELECTION_PLANS } from './data';
@@ -45,6 +45,25 @@ export default function App() {
   const [introFinished, setIntroFinished] = useState<boolean>(false);
   const [activeView, setActiveView] = useState<AppView>('home');
   const [mobileMenuOpen, setMobileMenuOpen] = useState<boolean>(false);
+  const mainContentRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (introFinished) return;
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+    };
+  }, [introFinished]);
+
+  const finishIntro = () => {
+    setIntroFinished(true);
+    requestAnimationFrame(() => {
+      mainContentRef.current?.focus({ preventScroll: true });
+    });
+  };
 
   // Quick navigation helper
   const navigateTo = (view: AppView) => {
@@ -79,13 +98,17 @@ export default function App() {
       {/* 1. Introductory Shutter/aperture experience */}
       <AnimatePresence>
         {!introFinished && (
-          <CameraLensIntro onEnter={() => setIntroFinished(true)} />
+          <CameraLensIntro onEnter={finishIntro} />
         )}
       </AnimatePresence>
 
-      {/* Main Container after shutter opens */}
-      {introFinished && (
-        <div className="flex flex-col min-h-screen">
+      {/* Main content is always rendered; the intro only overlays it. */}
+      <div
+        ref={mainContentRef}
+        className="flex flex-col min-h-screen"
+        inert={!introFinished}
+        tabIndex={-1}
+      >
           
           {/* Header Navigation Menu - Elegant, Simple, Gold-Brown accents */}
           <header className="sticky top-0 z-40 bg-natural-light border-b border-natural-sand/50 shadow-xs">
@@ -274,7 +297,7 @@ export default function App() {
               {activeView === 'home' && (
                 <motion.div
                   key="home-page"
-                  initial={{ opacity: 0 }}
+                  initial={false}
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
                 >
@@ -352,8 +375,7 @@ export default function App() {
             </div>
           </footer>
 
-        </div>
-      )}
+      </div>
 
     </div>
   );

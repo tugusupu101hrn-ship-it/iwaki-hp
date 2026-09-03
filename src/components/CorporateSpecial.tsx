@@ -13,6 +13,7 @@ import CorporateSolutions from './CorporateSolutions';
 import PriceEstimator from './PriceEstimator';
 import FAQAccordion from './FAQAccordion';
 import ContactUs from './ContactUs';
+import SpecializedExhibitions from './SpecializedExhibitions';
 
 interface CorporateSpecialProps {
   onBackToPhoto: () => void;
@@ -45,6 +46,9 @@ export default function CorporateSpecial({ onBackToPhoto, navigateTo }: Corporat
 
       {/* 4. Our Expertise */}
       <Expertise />
+
+      {/* Bridal and maternity services remain part of the initial home document. */}
+      <SpecializedExhibitions setActiveView={(view) => navigateTo(view)} />
 
       {/* 5. AI Video Strategy */}
       <AiPlanner onPlanGenerated={setAiPlanData} />
