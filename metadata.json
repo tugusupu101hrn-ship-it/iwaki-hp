@@ -1,6 +1,0 @@
-{
-  "name": "Film K",
-  "description": "北海道に特化した切れ目の無いカメラ撮影と高度な動画編集のプロフェッショナルサービス。マタニティやブライダルフォト特設ページを完備。",
-  "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
-}
